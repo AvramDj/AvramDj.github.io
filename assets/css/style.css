@@ -2,6 +2,7 @@
     --bg-color: #ffffff;
     --text-color: #333333;
     --link-color: #666666;
+    --link-hover-color: #333333;
     --code-bg: #f6f8fa;
     --border-color: #eaeaea;
     --header-color: #333333;
@@ -11,6 +12,7 @@
     --bg-color: #1a1a1a;
     --text-color: #e0e0e0;
     --link-color: #999999;
+    --link-hover-color: #ffffff;
     --code-bg: #2d2d2d;
     --border-color: #404040;
     --header-color: #ffffff;
@@ -51,7 +53,13 @@ nav a {
 }
 
 .post {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.post:last-child {
+    border-bottom: none;
 }
 
 .post-date {
@@ -99,4 +107,29 @@ code {
 
 * {
     transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-} 
+}
+
+/* Update link styles */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Make post titles more prominent */
+.post h2 {
+    margin-bottom: 0.5rem;
+}
+
+.post h2 a {
+    color: var(--header-color);
+    font-size: 1.5rem;
+}
+
+.post h2 a:hover {
+    color: var(--link-hover-color);
+}
