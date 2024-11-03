@@ -154,26 +154,19 @@ a:hover {
 
 /* Update post link styling */
 .post-link {
-    display: flex; /* Use flexbox for alignment */
-    justify-content: space-between; /* Space between title and date */
-    align-items: center; /* Center align items vertically */
-    margin-bottom: 1rem; /* Space between each post */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.post-link .post-date {
+    font-size: 0.85rem;
+    color: var(--link-color);
+    margin-bottom: 0.2rem;
 }
 
 .post-link a {
-    flex-grow: 1; /* Allow the link to take available space */
     font-size: 1rem;
     font-weight: 400;
-    color: #78bcf2; /* Keep the specified color for post links */
-    text-decoration: none; /* Remove underline */
-}
-
-.post-link a:hover {
-    color: #78bcf2; /* Hover color */
-}
-
-.post-date {
-    font-size: 0.9rem; /* Adjust font size for date */
-    color: var(--link-color); /* Use the link color */
-    margin-left: 1rem; /* Space between title and date */
+    color: #78bcf2;
 }

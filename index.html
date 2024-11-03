@@ -2,7 +2,6 @@
 layout: default
 ---
 
-<h2>About Me</h2>
 <div class="about-content">
     {% capture about_content %}{% include about.md %}{% endcapture %}
     {{ about_content | markdownify }}
@@ -12,6 +11,7 @@ layout: default
 <ul class="posts">
     {% for post in site.posts %}
     <li class="post-link">
+        <div class="post-date">{{ post.date | date: "%B %d, %Y" }}</div>
         <a href="{{ post.url | relative_url }}" class="post-title">{{ post.title }}</a>
     </li>
     {% endfor %}
