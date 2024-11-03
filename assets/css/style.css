@@ -228,3 +228,11 @@ footer {
     opacity: 1;
     visibility: visible;
 }
+
+/* Post image styles */
+.post img {
+    max-width: 50%;  /* Scale down to half size */
+    height: auto;    /* Maintain aspect ratio */
+    display: block;  /* Center the image */
+    margin: 2rem auto;
+}
