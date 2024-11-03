@@ -10,4 +10,4 @@ Most experienced practitioners have knowledge trees that they've built up over t
 
 Hopefully I'll commit to writing more often, but don't hold me to it.
 
-![ilovecoding]({{ '/assets/ilovecoding.jpg' | relative_url }})
+![ilovecoding]({{ '/assets/ilovecoding.png' | relative_url }})
