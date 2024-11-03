@@ -1,14 +1,4 @@
 :root {
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --link-color: #666666;
-    --link-hover-color: #333333;
-    --code-bg: #f6f8fa;
-    --border-color: #eaeaea;
-    --header-color: #333333;
-}
-
-[data-theme="dark"] {
     --bg-color: #1a1a1a;
     --text-color: #e0e0e0;
     --link-color: #999999;
@@ -16,6 +6,16 @@
     --code-bg: #2d2d2d;
     --border-color: #404040;
     --header-color: #ffffff;
+}
+
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --link-color: #666666;
+    --link-hover-color: #333333;
+    --code-bg: #f6f8fa;
+    --border-color: #eaeaea;
+    --header-color: #333333;
 }
 
 body {
@@ -229,10 +229,9 @@ footer {
     visibility: visible;
 }
 
-/* Post image styles */
-.post img {
-    max-width: 50%;  /* Scale down to half size */
-    height: auto;    /* Maintain aspect ratio */
-    display: block;  /* Center the image */
+img[alt="ilovecoding"] {
+    max-width: 50%;
+    height: auto;
+    display: block;
     margin: 2rem auto;
 }

@@ -45,9 +45,10 @@
     </footer>
 
     <script>
-        // Check for saved theme preference, otherwise use light theme
+        // Check for saved theme preference, otherwise use dark theme
         const getPreferredTheme = () => {
-            return localStorage.getItem('theme') || 'light';
+            const savedTheme = localStorage.getItem('theme');
+            return savedTheme === 'light' ? 'light' : 'dark'; // Forces dark if not explicitly light
         };
 
         // Apply theme
@@ -74,7 +75,7 @@
         // Toggle theme
         const toggleTheme = () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             setTheme(newTheme);
         };
 
