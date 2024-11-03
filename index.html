@@ -2,10 +2,11 @@
 layout: default
 ---
 
+<h2 style="margin-bottom: 1rem;">Posts:</h2>
 <ul class="posts">
     {% for post in site.posts %}
     <li class="post-link">
-        <a href="{{ post.url | relative_url }}" target="_blank">{{ post.title }}</a>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
     </li>
     {% endfor %}
 </ul> 
