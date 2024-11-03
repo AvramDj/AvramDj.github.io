@@ -229,6 +229,13 @@ footer {
     visibility: visible;
 }
 
+/* Add this new rule to make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Existing styles for specific images */
 img[alt="ilovecoding"] {
     max-width: 75%;
     height: auto;
