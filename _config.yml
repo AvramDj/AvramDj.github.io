@@ -1,0 +1,10 @@
+title: avramdj's Blog
+description: >- 
+  Write your blog description here.
+baseurl: ""
+url: "https://avramdj.github.io"
+
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
