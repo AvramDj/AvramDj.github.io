@@ -1,26 +1,15 @@
 ---
-title: "My First Blog Post"
-description: "This is my first blog post using Astro"
-pubDate: "2024-11-03"
+title: 'First Blog Post'
+description: 'This is my first blog post'
+pubDate: 2024-11-03T00:00:00.000Z
 ---
 
-# Welcome to My Blog
+# Welcome to my blog
 
-This is my first blog post! I can write in **Markdown** and it will be automatically converted to HTML.
+This is my first blog post using Astro. I can write in Markdown and it will be automatically converted to HTML.
 
-## Code Examples
+## Some features
 
-```python
-def hello_world():
-    print("Hello, blog readers!")
-```
-
-## Lists
-
-- Easy to write
-- Markdown support
+- Easy to write in Markdown
 - Fast loading
-
-## Links
-
-Check out [Astro's documentation](https://docs.astro.build) for more info.
+- SEO friendly
