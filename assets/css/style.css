@@ -133,3 +133,17 @@ a:hover {
 .post h2 a:hover {
     color: var(--link-hover-color);
 }
+
+/* Add this to your existing CSS */
+.post-link {
+    margin-bottom: 1rem;
+}
+
+.post-link a {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.post-link a:hover {
+    color: var(--link-hover-color);
+}

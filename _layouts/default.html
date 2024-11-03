@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title }} - {% endif %}nord's blog</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/icon.ico' | relative_url }}">
 </head>
 <body>
     <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
@@ -15,7 +16,7 @@
 
     <div class="container">
         <header>
-            <h1><a href="{{ '/' | relative_url }}">nord's blog</a></h1>
+            <h1><a href="{{ '/' | relative_url }}">nord</a></h1>
             <nav>
                 <a href="{{ '/' | relative_url }}">Blog</a>
                 <a href="{{ '/about' | relative_url }}">About</a>
@@ -25,10 +26,6 @@
         <main>
             {{ content }}
         </main>
-
-        <footer>
-            <p>&copy; {{ site.time | date: '%Y' }} nord's blog</p>
-        </footer>
     </div>
 
     <script>
