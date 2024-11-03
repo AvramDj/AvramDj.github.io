@@ -1,8 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 
-const posts = await getCollection('blog');
-posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = await getCollection('blog', ({ data }) => {
+  return !data.draft;
+});
 ---
 
 <!DOCTYPE html>
@@ -11,38 +12,21 @@ posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My Blog</title>
-    <style>
-      body {
-        font-family: system-ui, sans-serif;
-        max-width: 65ch;
-        margin: 0 auto;
-        padding: 2rem;
-        line-height: 1.6;
-      }
-      .post-list {
-        list-style: none;
-        padding: 0;
-      }
-      .post-item {
-        margin-bottom: 2rem;
-      }
-      .post-date {
-        color: #666;
-        font-size: 0.9rem;
-      }
-    </style>
   </head>
   <body>
     <main>
       <h1>My Blog</h1>
-      <ul class="post-list">
-        {posts.map(post => (
-          <li class="post-item">
-            <h2>
-              <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-            </h2>
-            <p class="post-date">{post.data.pubDate.toLocaleDateString()}</p>
-            <p>{post.data.description}</p>
+      <ul>
+        {posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toLocaleDateString('en-us', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              })}
+            </time>
           </li>
         ))}
       </ul>
