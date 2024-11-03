@@ -25,6 +25,16 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Create package.json if not exists
+        run: |
+          if [ ! -f package.json ]; then
+            npm init -y
+            npm install astro @astrojs/mdx @astrojs/sitemap
+            npm pkg set scripts.build="astro build"
+            npm pkg set scripts.dev="astro dev"
+            npm pkg set scripts.preview="astro preview"
+          fi
+
       - name: Install dependencies
         run: npm install
 
