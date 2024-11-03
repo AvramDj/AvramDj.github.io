@@ -1,8 +1,3 @@
----
-layout: post
-title: About
----
-
 <!-- Hi, I'm Avram. People on the internet call me nord. -->
 
 I work as a machine learning engineer, primarily research and development, but also a fair bit of software engineering, architecture, and devops work. 
