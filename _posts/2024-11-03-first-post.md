@@ -1,7 +1,7 @@
 ---
 layout: post
 title: First post
-date: 2024-03-20
+date: 2024-11-03
 ---
 
 I plan on using this blog to write about my work and thoughts on machine learning, research, and engineering.
