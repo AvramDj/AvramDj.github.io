@@ -30,7 +30,7 @@ body {
 }
 
 header {
-    margin-bottom: 3rem;
+    margin-bottom: 0.75rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--border-color);
 }
@@ -169,4 +169,62 @@ a:hover {
     font-size: 1rem;
     font-weight: 400;
     color: #78bcf2;
+}
+
+/* Footer styles */
+footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.footer-link .icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--text-color);
+}
+
+.footer-link:hover {
+    color: var(--link-hover-color);
+}
+
+.footer-link:hover .icon {
+    fill: var(--link-hover-color);
+}
+
+/* Tooltip styles */
+.footer-link::before {
+    content: attr(title);
+    position: absolute;
+    top: -2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem;
+    background: var(--code-bg);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+}
+
+.footer-link:hover::before {
+    opacity: 1;
+    visibility: visible;
 }
