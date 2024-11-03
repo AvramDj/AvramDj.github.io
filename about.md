@@ -3,17 +3,21 @@ layout: post
 title: About
 ---
 
-Hi, I'm Avram Djordjevic.
+Hi, I'm Avram. People on the internet call me nord.
 
-My research interests lie at the intersection of machine learning and mathematics. I'm particularly focused on:
+I work as a machine learning engineer, primarily research and development, but also a fair bit of software engineering, architecture, and devops work. 
 
-- Deep Learning & Neural Architectures
-- Mathematical Foundations of ML/AI
-- Large Language Models
-- Compiler Design
+I'm both an engineer and mathematician at heart, and I love to build things. I also do independent research and love tinkering with new ideas, implementing papers in pytorch, and hacking on new SOTA models.
 
-I write about ML research, implementation details of interesting papers, and occasionally about compiler theory.
+I'm particularly interested in:
 
-You can find me on:
-- [GitHub](https://github.com/avramdj)
-- [LinkedIn](https://linkedin.com/in/avramdj)
+- LLMs, diffusion models, and other generative models
+- High precision specialized ML systems for automating sensitive tasks
+- Model interpretability and explainability
+- Mathematical foundations of deep learning and geometric deep learning
+- Software engineering and architecture
+- Optimizing systems for performance and efficiency
+- Distributed systems
+- DevOps and automation
+
+You can DM me on [Twitter](https://twitter.com/avramdjo) if you have any interesting ideas or opportunities.
