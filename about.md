@@ -1,30 +1,21 @@
 ---
-layout: default
+layout: post
 title: About
 ---
 
-# About Me
+Hi, I'm Avram Djordjevic.
 
-I'm nord, a 26-year-old machine learning researcher and software engineer. This is where I document my work and thoughts on technology, acceleration, and the future of intelligence.
+I'm passionate about machine learning research, particularly focusing on state-of-the-art developments in the field. My interests span across:
 
-## Focus Areas
-
-I'm driven by:
-- Machine Learning and AGI
-- Systems Engineering
-- Mathematical Foundations of Computing
-- Deep Learning Architectures & Transformers
+- Machine Learning Research & Deep Learning
+- Mathematical Foundations of ML
+- Compiler Design & Implementation
 - Programming Language Theory
 
-## Content
+I enjoy exploring the theoretical aspects of machine learning and their practical applications. When I'm not diving into ML research papers or working on mathematical proofs, I'm often experimenting with compiler design and implementation.
 
-You can expect:
-- Technical deep dives into ML architectures
-- Analysis of transformer models and LLMs
-- Mathematical exploration of AI systems
-- Systems design and engineering insights
-- Project documentation and research notes
+You can find me on:
+- [GitHub](https://github.com/avramdj)
+- [LinkedIn](https://linkedin.com/in/avramdj)
 
-## Contact
-
-I'm open to contract work. Message me on [Twitter](https://twitter.com/avramdjo). 
+Feel free to reach out if you'd like to discuss ML research, math, or compilers!
