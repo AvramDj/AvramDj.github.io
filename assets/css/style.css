@@ -137,13 +137,19 @@ a:hover {
 /* Add this to your existing CSS */
 .post-link {
     margin-bottom: 1rem;
+    list-style-type: disc;
+    margin-left: 1.5rem;
 }
 
 .post-link a {
     font-size: 1.2rem;
-    color: var(--text-color);
+    color: #78bcf2;
 }
 
 .post-link a:hover {
-    color: var(--link-hover-color);
+    color: #78bcf2;
+}
+
+.post-link a:visited {
+    color: #78bcf2;
 }

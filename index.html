@@ -2,10 +2,10 @@
 layout: default
 ---
 
-<div class="posts">
+<ul class="posts">
     {% for post in site.posts %}
-    <div class="post-link">
+    <li class="post-link">
         <a href="{{ post.url | relative_url }}" target="_blank">{{ post.title }}</a>
-    </div>
+    </li>
     {% endfor %}
-</div> 
+</ul> 
