@@ -1,6 +1,9 @@
 ---
 layout: post
-title: Hello World
+title: Hello world
+date: 2024-03-20
 ---
 
-This is my first blog post. More content coming soon! 
+# Hello world
+
+This is a test post. 
