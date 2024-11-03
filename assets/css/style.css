@@ -76,10 +76,35 @@ code {
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
-.theme-toggle {
+.theme-toggle-container {
     position: fixed;
     top: 1rem;
     right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.theme-label {
+    background: var(--code-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    position: absolute;
+    right: 50px;
+    white-space: nowrap;
+}
+
+.theme-toggle-container:hover .theme-label {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.theme-toggle {
+    position: relative;
     padding: 0.5rem;
     border-radius: 50%;
     width: 40px;

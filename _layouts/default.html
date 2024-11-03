@@ -8,11 +8,14 @@
     <link rel="icon" type="image/x-icon" href="{{ '/assets/icon.ico' | relative_url }}">
 </head>
 <body>
-    <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
-        <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM12 21.75a.75.75 0 01-.75-.75v-2.25a.75.75 0 011.5 0V21a.75.75 0 01-.75.75zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM21 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5h2.25A.75.75 0 0121 12z"/>
-        </svg>
-    </button>
+    <div class="theme-toggle-container">
+        <div class="theme-label">System</div>
+        <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+            <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM12 21.75a.75.75 0 01-.75-.75v-2.25a.75.75 0 011.5 0V21a.75.75 0 01-.75.75zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM21 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5h2.25A.75.75 0 0121 12z"/>
+            </svg>
+        </button>
+    </div>
 
     <div class="container">
         <header>
@@ -29,26 +32,53 @@
     </div>
 
     <script>
-        // Check for saved theme preference, otherwise use system preference
+        // Theme options
+        const THEMES = {
+            LIGHT: 'light',
+            DARK: 'dark',
+            SYSTEM: 'system'
+        };
+
+        // Check for saved theme preference, otherwise use system
         const getPreferredTheme = () => {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                return savedTheme;
+            const savedTheme = localStorage.getItem('theme') || THEMES.SYSTEM;
+            if (savedTheme === THEMES.SYSTEM) {
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? THEMES.DARK : THEMES.LIGHT;
             }
-            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            return savedTheme;
         };
 
         // Apply theme
         const setTheme = (theme) => {
-            document.documentElement.setAttribute('data-theme', theme);
+            const actualTheme = theme === THEMES.SYSTEM 
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? THEMES.DARK : THEMES.LIGHT)
+                : theme;
+            
+            document.documentElement.setAttribute('data-theme', actualTheme);
             localStorage.setItem('theme', theme);
             updateThemeToggle(theme);
         };
 
-        // Update toggle button icon
+        // Update toggle button icon and label
         const updateThemeToggle = (theme) => {
             const toggle = document.querySelector('.theme-toggle');
-            if (theme === 'dark') {
+            const label = document.querySelector('.theme-label');
+            
+            // Capitalize first letter
+            label.textContent = theme.charAt(0).toUpperCase() + theme.slice(1);
+
+            if (theme === THEMES.SYSTEM) {
+                const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                updateThemeIcon(isDark ? THEMES.DARK : THEMES.LIGHT);
+            } else {
+                updateThemeIcon(theme);
+            }
+        };
+
+        // Update just the icon
+        const updateThemeIcon = (theme) => {
+            const toggle = document.querySelector('.theme-toggle');
+            if (theme === THEMES.DARK) {
                 toggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
                 </svg>`;
@@ -59,20 +89,23 @@
             }
         };
 
-        // Toggle theme
+        // Toggle between light, dark, and system
         const toggleTheme = () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            const currentTheme = localStorage.getItem('theme') || THEMES.SYSTEM;
+            const themes = [THEMES.LIGHT, THEMES.DARK, THEMES.SYSTEM];
+            const currentIndex = themes.indexOf(currentTheme);
+            const newTheme = themes[(currentIndex + 1) % themes.length];
             setTheme(newTheme);
         };
 
         // Initialize theme
-        setTheme(getPreferredTheme());
+        setTheme(localStorage.getItem('theme') || THEMES.SYSTEM);
 
         // Listen for system theme changes
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (!localStorage.getItem('theme')) {
-                setTheme(e.matches ? 'dark' : 'light');
+            const currentTheme = localStorage.getItem('theme') || THEMES.SYSTEM;
+            if (currentTheme === THEMES.SYSTEM) {
+                setTheme(THEMES.SYSTEM);
             }
         });
     </script>
