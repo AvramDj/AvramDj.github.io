@@ -1,8 +1,8 @@
 :root {
     --bg-color: #ffffff;
     --text-color: #333333;
-    --link-color: #78bcf2;
-    --link-hover-color: #78bcf2;
+    --link-color: #666666;
+    --link-hover-color: #333333;
     --code-bg: #f6f8fa;
     --border-color: #eaeaea;
     --header-color: #333333;
@@ -11,8 +11,8 @@
 [data-theme="dark"] {
     --bg-color: #1a1a1a;
     --text-color: #e0e0e0;
-    --link-color: #78bcf2;
-    --link-hover-color: #78bcf2;
+    --link-color: #999999;
+    --link-hover-color: #ffffff;
     --code-bg: #2d2d2d;
     --border-color: #404040;
     --header-color: #ffffff;
@@ -91,6 +91,7 @@ code {
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease;
+    z-index: 1000;
 }
 
 .theme-toggle:hover {
@@ -109,43 +110,20 @@ code {
 
 /* Update link styles */
 a {
-    color: #78bcf2;
+    color: var(--link-color);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 a:hover {
-    color: #78bcf2;
-}
-
-a:visited {
-    color: #78bcf2;
-}
-
-/* Make post titles more prominent */
-.post h2 {
-    margin-bottom: 0.5rem;
-}
-
-.post h2 a {
-    color: var(--header-color);
-    font-size: 1.5rem;
-}
-
-.post h2 a:hover {
     color: var(--link-hover-color);
 }
 
-/* Add this to your existing CSS */
-.post-link {
-    margin-bottom: 0.8rem;
-    list-style-type: none;
-    margin-left: 0;
-}
-
+/* Post link specific styles */
 .post-link a {
     font-size: 1rem;
     font-weight: 400;
+    color: #78bcf2;
 }
 
 .post-link a:hover {
