@@ -1,10 +1,24 @@
-title: avramdj's Blog
-description: >- 
-  Write your blog description here.
-baseurl: ""
+title: nord
+description: Avram Djordjevic's blog
 url: "https://avramdj.github.io"
+baseurl: ""
 
-theme: minima
+# Build settings
+markdown: kramdown
+permalink: /:title/
+highlighter: rouge
+
+# Plugins
 plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+  - jekyll-paginate
+
+# Pagination
+paginate: 5
+paginate_path: "/page:num/"
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .gitignore
